@@ -1,0 +1,35 @@
+//to create a deployment
+kubectl create deployment nginx-depl --image=nginx
+
+//to get status of deployments
+kubectl get deployment
+
+//to get status of pods
+kubectl get pod
+
+//between deployment and pod deployment
+//we don't create replica set (This is all part of deployment)
+kubectl get replicaset
+
+//edit deployment
+kubectl edit deployment nginx-depl
+
+//get the logs from the pod
+kubectl logs nginx-depl-5c8bf76b5b-hjw6r
+
+//get the status of kubectl
+kubectl describe pod
+
+//get pods terminal 
+kubectl exec -it nginx-depl-5c8bf76b5b-hjw6r -- bin/bash
+
+//delete a deployment
+kubectl delete deployment nginx-depl
+
+//kubctl apply used the yaml file
+kubectl apply -f mongo-config.yaml
+
+//export deployment to file
+kubectl get deployment nginx-deployment -o yaml > result.yaml
+
+//create a deployment file for pod and service
